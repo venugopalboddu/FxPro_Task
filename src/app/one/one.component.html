@@ -1,0 +1,61 @@
+<h2>Get Data from Server and Display in Component1</h2>
+<hr/><br/>
+<table>
+  <tr class="head">
+    <th>Id</th>
+    <th>Name</th>
+    <th>UserName</th>
+    <th>Email</th>
+    <th>Street</th>
+    <th>Suite</th>
+    <th>City</th>
+    <th>Zipcode</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>Phone</th>
+    <th>Website</th>
+  </tr>
+
+  <!-- <tr *ngFor="let d of data" data-toggle="modal" data-target="#myModal" (click)="openModal(d)"> -->
+    <tr *ngFor="let d of data" (click)="ID(d.id)">
+    <td>{{d.id}}</td>
+    <td>{{d.name}}</td>
+    <td>{{d.username}}</td>
+    <td>{{d.email}}</td>
+    <td>{{d.address.street}}</td>
+    <td>{{d.address.suite}}</td>
+    <td>{{d.address.city}}</td>
+    <td>{{d.address.zipcode}}</td>
+    <td>{{d.address.geo.lat}}</td>
+    <td>{{d.address.geo.lng}}</td>
+    <td>{{d.phone}}</td>
+    <td>{{d.website}}</td>
+  </tr>
+</table>
+
+
+<!----------------------------------------->
+<!-- This below code is open Modal PopUp -->
+<!----------------------------------------->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Details</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      
+      <!-- Modal body -->
+      <div class="modal-body">
+              <pre>{{emplye | json}}</pre>
+      </div>
+      
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
